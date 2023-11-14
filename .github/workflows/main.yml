@@ -8,15 +8,14 @@ on:
 
 jobs: 
   pipeline: 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     strategy:
       matrix:
         node-version: [ 17.x ]
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Set up Node.js ${{ matrix.node-version }}
+      - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}

@@ -14,9 +14,10 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
-    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static --chromeFlags=\"--headless --disable-gpu --hide-scrollbars --no-sandbox\"",
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static ",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "storybook:build": "storybook build -c ./config/storybook"
+    "storybook:build": "storybook build -c ./config/storybook",
+    "overrides": { "loki": { "@storybook/react": "$@storybook/react" } }    
   },
   "keywords": [],
   "author": "",
@@ -88,6 +89,7 @@
     "react-i18next": "^11.15.5",
     "react-router-dom": "^6.2.1"
   },
+  "overrides": { "loki": { "@storybook/react": "$@storybook/react" } } ,
   "loki": {
     "configurations": {
       "chrome.laptop": {

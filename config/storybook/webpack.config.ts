@@ -1,7 +1,7 @@
 import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
 import { BuildPaths } from '../build/types/config';
-import { buildCssLoaders } from '../build/loaders/buildcssLoaders';
+import { buildCssLoaders } from '../build/loaders/buildCssLoaders';
 
 export default ({ config }: {config: webpack.Configuration}) => {
     const paths: BuildPaths = {
@@ -15,7 +15,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
 
     if (config.module) {
         // eslint-disable-next-line no-param-reassign
-        config.module.rules = config.module.rules?.map((rule: RuleSetRule) => {
+        config.module.rules = config.module?.rules?.map((rule: RuleSetRule) => {
             if (/svg/.test(rule.test as string)) {
                 return { ...rule, exclude: /\.svg$/i };
             }

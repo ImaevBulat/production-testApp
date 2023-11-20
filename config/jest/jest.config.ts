@@ -18,6 +18,10 @@ export default {
     // cacheDirectory: "/private/var/folders/6_/4s2tr33s4r9b2h051cnm5m0h0000gn/T/jest_dx",
 
     // Automatically clear mock calls, instances, contexts and results before every test
+    globals: {
+        __IS_DEV__: true,
+    },
+
     clearMocks: true,
     testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: [
@@ -97,7 +101,6 @@ export default {
     // globalTeardown: undefined,
 
     // A set of global variables that need to be available in all test environments
-    // globals: {},
 
     // The maximum amount of workers used to run your tests. Can be
     // specified as % or a number. E.g. maxWorkers:

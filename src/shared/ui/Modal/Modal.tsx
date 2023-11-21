@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import React, {
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
+import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
 
@@ -20,6 +21,8 @@ export const Modal = (props :ModalProps) => {
         className, children, isOpen, onClose,
     } = props;
     const { t } = useTranslation();
+
+    const { theme } = useTheme();
 
     const [isClosing, setIsClosing] = useState(false);
     const timeRef = useRef < ReturnType<typeof setTimeout>>();
